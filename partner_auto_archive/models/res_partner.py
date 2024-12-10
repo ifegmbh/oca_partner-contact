@@ -11,6 +11,9 @@ class Partner(models.Model):
         help="Archive contact automatically after a period of time", tracking=True
     )
 
+    def _valid_field_parameter(self, field, name):
+        return name == 'tracking' or super()._valid_field_parameter(field, name)
+
     @api.model
     def _auto_archive_contacts(self):
         contacts_to_archive = self.env["res.partner"].search(
