@@ -11,7 +11,7 @@ from odoo.tests import SavepointCase
 class TestAddressVersion(SavepointCase):
     @classmethod
     def setUpClass(cls):
-        super().setUpClass()
+        super(TestAddressVersion, cls).setUpClass()
         cls.partner_vals = OrderedDict(
             [
                 ("name", "Name"),
